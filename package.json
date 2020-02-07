@@ -4,10 +4,11 @@
   "description": "convert PSD to HTML and CSS",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d assets/dist"
   },
   "author": "Aya Adel",
   "license": "ISC",
+  "homepage": "https://ayaadel.github.io/seo",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -20,6 +21,7 @@
     "gulp-uglify-es": "^2.0.0"
   },
   "dependencies": {
+    "gh-pages": "^2.2.0",
     "gulp-file-include": "^2.1.1"
   }
 }

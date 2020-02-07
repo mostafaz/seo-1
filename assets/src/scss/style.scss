@@ -1,0 +1,138 @@
+// Vars
+$primary-color: #214566;
+$secondary-color: #fff;
+$third-color: #bfffff;
+
+//fonts
+@font-face {
+  font-family: tohama;
+  src: url(./../fonts/TAHOMA_0.TTF);
+}
+
+// Global
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: tohama;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+}
+
+.container {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 77px;
+}
+
+// Header
+header {
+  height: 65px;
+  background-color: $primary-color;
+  font-size: 18px;
+
+  .navbar {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+
+    .logo-wrapper {
+      height: 100%;
+      color: $secondary-color;
+      line-height: 65px;
+    }
+
+    .menu-list {
+      text-align: right;
+
+      li {
+        margin-left: 25px;
+
+        a {
+          color: $secondary-color;
+
+          &.sign {
+            padding: 3px;
+            color: $third-color;
+            border: 1px solid $third-color;
+
+            &:hover {
+              color: $secondary-color;
+              border-color: $secondary-color;
+            }
+          }
+
+          &:hover {
+            color: $third-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// main
+main {
+  width: 100%;
+  height: calc(100vh - 65px);
+  padding-left: 100px;
+  color: $secondary-color;
+  background-image: url("./../imgs/main.png");
+  background-size: cover;
+  display: grid;
+  align-items: center;
+
+  .main-content {
+    width: 60%;
+    text-align: center;
+
+    h1 {
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+
+    button {
+      padding: 15px 40px;
+      background-color: $primary-color;
+      color: $secondary-color;
+      font-size: 27px;
+      border: 1px solid $primary-color;
+      border-radius: 50px;
+
+      &:hover,
+      &:focus {
+        background-color: $secondary-color;
+        color: $primary-color;
+        border-color: $secondary-color;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

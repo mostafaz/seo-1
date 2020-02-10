@@ -3,35 +3,30 @@ $primary-color: #214566;
 $secondary-color: #fff;
 $third-color: #bfffff;
 
-//fonts
-@font-face {
-  font-family: tohama;
-  src: url(./../fonts/TAHOMA_0.TTF);
-}
 
 // Global
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: tohama;
+  font-family: 'Open Sans', sans-serif;
 }
 
 ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 li {
   display: inline-block;
-}
-
-.container {
-  width: 70%;
-  height: 100%;
-  margin: 0 auto;
 }
 
 a {
@@ -47,50 +42,48 @@ p {
 }
 
 h1 {
-  font-size: 77px;
+  font-size: 50px;
+}
+
+h6 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+img {
+  object-fit: cover;
 }
 
 // Header
 header {
-  height: 65px;
   background-color: $primary-color;
-  font-size: 18px;
 
   .navbar {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
+    padding-right: 0;
+    padding-left: 0;
+  }
 
-    .logo-wrapper {
-      height: 100%;
-      color: $secondary-color;
-      line-height: 65px;
-    }
+  .navbar-brand,
+  .navbar-brand:hover {
+    color: $secondary-color;
+  }
+  .nav-item {
+    padding-left: 10px;
 
-    .menu-list {
-      text-align: right;
+    a {
+      color: rgba($secondary-color, .7);
 
-      li {
-        margin-left: 25px;
+      &:hover {
+        color: rgba($secondary-color, 1); 
+      }
 
-        a {
-          color: $secondary-color;
+      &.sign {
+        color: $third-color;
+        border: 1px solid $third-color;
 
-          &.sign {
-            padding: 3px;
-            color: $third-color;
-            border: 1px solid $third-color;
-
-            &:hover {
-              color: $secondary-color;
-              border-color: $secondary-color;
-            }
-          }
-
-          &:hover {
-           color: $third-color;
-          }
+        &:hover {
+          background-color: $third-color;
+          color: $primary-color;
         }
       }
     }
@@ -100,38 +93,271 @@ header {
 // main
 main {
   width: 100%;
-  height: calc(100vh - 65px);
-  padding-left: 100px;
+  height: calc(100vh - 58px);
   color: $secondary-color;
   background-image: url("./../imgs/main.png");
   background-size: cover;
   display: grid;
   align-items: center;
 
-  .main-content {
-    width: 60%;
-    text-align: center;
+  h1 {
+    margin-bottom: 30px;
+  }
 
-    h1 {
-      margin-bottom: 25px;
-      font-weight: 500;
+  .btn {
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: $primary-color;
+    color: $secondary-color;
+    border: 1px solid $primary-color;
+
+    &:hover,
+    &:focus {
+      background-color: $secondary-color;
+      color: $primary-color;
+      border-color: $secondary-color;
     }
+  }
 
-    button {
-      padding: 15px 40px;
-      background-color: $primary-color;
+  .jump-link {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: inline-block;
+
+    a {
+      width: 40px;
+      height: 40px;
       color: $secondary-color;
-      font-size: 27px;
-      border: 1px solid $primary-color;
-      border-radius: 50px;
+      border: 1px solid $secondary-color;
+      border-radius: 50%;
+      font-size: 18px;
+      line-height: 40px;
+      display: inline-block;
 
-      &:hover,
-      &:focus {
+      &:hover {
         background-color: $secondary-color;
         color: $primary-color;
-        border-color: $secondary-color;
-        outline: none;
-        cursor: pointer;
+      }
+    }
+  }
+}
+
+.seo-questions {
+  padding: 50px 0;
+  color: $primary-color;
+
+  .question-shape {
+    position: relative;
+    text-align: center;
+  
+    .ques1 {
+      position: absolute;
+      top: 10%;
+      right: 15%;
+  
+      .ques1-content {
+        margin-bottom: 20px;
+      }
+    }
+  
+    .ques2 {
+      position: absolute;
+      top: 35%;
+      left: 4%;
+    }
+  
+    .ques3 {
+      position: absolute;
+      bottom: 20%;
+      left: 23%;
+    }
+  
+    .ques4 {
+      position: absolute;
+      bottom: 7%;
+      right: 6%;
+    }
+  }
+  
+  .questions-content .ques1 {
+    margin-bottom: 30px;
+  }
+
+  .more-options {
+    margin-top: 50px;
+    text-align: center;
+  }
+}
+
+.how-works {
+  padding: 50px 0;
+  background-color: #f7f7f7;
+  color: $primary-color;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  .how-works-shape {
+    width: 70%;
+    margin: 0 auto 20px;
+    position: relative;
+
+    .item1,
+    .item2,
+    .item3 {
+      position: absolute;
+    }
+
+    h6, p {
+      margin-bottom: 20px;
+    }
+
+    .item1 {
+      bottom: 29%;
+      left: 3%;
+
+      .plus-wrapper {
+        width: 20px;
+        margin: 0 auto
+      }
+    }
+
+    .item2 {
+      top: 13%;
+      left: 28%;
+    }
+
+    .item3 {
+      bottom: 14%;
+      right: 26px;
+
+      .invite-wrapper {
+        width: 50px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .check-right-wraper {
+    width: 40px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+}
+
+.about-seo {
+  padding: 50px 0;
+  color: $primary-color;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    margin-bottom: 40px;
+  }
+
+  .first-row {
+    margin-bottom: 40px;
+
+    .item {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 10px;
+      line-height: 50px;
+  
+      &.verified-wrapper {
+        width: 40px;
+      }
+    }
+  }
+
+  .second-row {
+    .item {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 10px;
+      line-height: 70px;
+  
+      &.performance-wrapper {
+        width: 130px;
+      }
+    }
+  }
+}
+
+.build,
+.pricing {
+  padding: 50px 0;
+  color: $primary-color;
+  text-align: center;
+  line-height: 1.8;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+}
+
+.build {
+  background-color: #f7f7f7;
+
+  p {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.scroll-top a {
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 45px;
+  position: fixed;
+  bottom: 5.5rem;
+  right: 2.5rem;
+  z-index: 99;
+  opacity: 0;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+}
+
+footer {
+  padding: 20px;
+  background-color: $primary-color;
+  text-align: center;
+
+  li {
+    margin-right: 15px;
+
+    a {
+      color: $secondary-color;
+      font-size: 30px;
+
+      &.instagram:hover {
+        color: #EF6D3F;
+      }
+
+      &.twitter:hover {
+        color: #1DA1F2;
+      }
+      &.facebook:hover {
+        color: #4267B2;
       }
     }
   }
